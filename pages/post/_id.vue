@@ -53,7 +53,7 @@ import AppCommentForm from '@/components/main/CommentForm'
 
 export default {
   validate({params}) {
-    return Boolean(params.id)
+    return Boolean(params.id);
   },
   data() {
     return {
@@ -62,7 +62,7 @@ export default {
   },
   methods: {
     createCommentHandler() {
-      this.canAddComment = false
+      this.canAddComment = false;
     }
   },
   components: {AppComment, AppCommentForm}
