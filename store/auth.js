@@ -17,9 +17,7 @@ export const actions = {
         dispatch
     }, formData) {
         try {
-            const token = await new Promise((resolve, reject) => {
-                setTimeout(() => resolve('mock-token'), 2000);
-            });
+            const {token} = await this.$axios.$post('/api/auth/admin/login', formData);
             dispatch('setToken', token);
         } catch (e) {
             commit('setError', e, {
