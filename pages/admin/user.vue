@@ -63,7 +63,6 @@ export default {
               login: this.controls.login,
               password: this.controls.password
             };
-
             await this.$store.dispatch('auth/createUser', formData);
             this.$message.success('Новый пользователь добавлен');
             this.controls.login = '';

@@ -24,6 +24,7 @@ module.exports.login = async (req, res) => {
 }
 
 module.exports.createUser = async (req, res) => {
+  console.log('createUser', req.body);
   const candidate = await User.findOne({login: req.body.login})
 
   if (candidate) {
