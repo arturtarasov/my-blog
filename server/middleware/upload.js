@@ -9,7 +9,7 @@ const storage = multer.diskStorage({
     },
     // для уникального имени файла
     filename(req, file, callback) {
-        callback(null, `${file.originalname}-${moment().format('DDMMYYYY-HHmmss_SSS')}`)
+        callback(null, `${moment().format('DDMMYYYY-HHmmss_SSS')}-${file.originalname}`)
     }
 });
 
