@@ -24,6 +24,9 @@
 export default {
   layout: "empty",
   middleware: ["admin-auth"],
+  head: {
+    title: `Вход в панель администратора  | ${process.env.appName}`
+  },
   data() {
     return {
       loading: false,

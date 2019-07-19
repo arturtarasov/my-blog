@@ -41,6 +41,12 @@ router.delete(
     controller.remove
 );
 
+router.get(
+    '/admin/get/analytics',
+    passport.authenticate('jwt', {session: false}),
+    controller.getAnalytics
+)
+
 /**
  * BASE
  * route /api/post
