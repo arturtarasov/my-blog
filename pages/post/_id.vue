@@ -56,7 +56,11 @@ export default {
   },
   head() {
     return {
-      title: `${this.post.title} | ${process.env.appName}`
+      title: `${this.post.title} | ${process.env.appName}`,
+      meta: [
+        {hid: `post-${this.post.id}`, name: 'description', content: `${this.post.title}`},
+        {hid: `homepage-${this.post.id}`, name: 'keywords', content: `js, javascript, vuejs, nuxjs, blog, page id - ${this.post.id}`}
+    ], 
     }
   },
   async asyncData({ store, params }) {
