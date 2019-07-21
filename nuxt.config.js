@@ -37,8 +37,13 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/pwa'
   ],
+
+  axios: {
+    baseURL: process.env.BASE_URL || 'http://localhost:3000'
+  },
 
   env: {
     appName: 'SSR Blog'
