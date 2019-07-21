@@ -1,9 +1,5 @@
 <template>
-  <el-menu
-    router
-    :style="{height: '100%'}"
-    :default-active="$route.path"
-  >
+  <el-menu class="menu" router :style="{height: '100%'}" :default-active="$route.path" :collapse="isCollapse">
     <el-menu-item index="/admin">
       <i class="el-icon-menu"></i>
       <span>Аналитика</span>
@@ -26,3 +22,13 @@
     </el-menu-item>
   </el-menu>
 </template>
+
+<script>
+import Vue from 'vue';
+export default {
+  props: {
+    isCollapse: Boolean
+  }
+};
+</script>
+
