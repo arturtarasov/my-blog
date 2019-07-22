@@ -34,6 +34,9 @@ export default {
     justify-content: space-between;
     margin-bottom: 0.5rem;
     font-size: 0.8rem;
+    span {
+      font-family: 'Montserrat-Light';
+    }
   }
 
   .comment-text {

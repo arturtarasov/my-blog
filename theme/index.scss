@@ -8,7 +8,7 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',SimSun,sans-serif;
+  font-family: 'Montserrat-Regular';
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
 }
@@ -31,4 +31,28 @@ html, body {
 
 .mb2 {
   margin-bottom: 2rem;
+}
+
+@font-face {
+  font-family: 'Montserrat-Light';
+  src: url('../assets/fonts/Montserrat-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Montserrat-Medium';
+  src: url('../assets/fonts/Montserrat-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url('../assets/fonts/Montserrat-Regular.ttf');
+}
+
+body {
+  background: #c5c0c0b5;
+  height: 100%;
+}
+
+h1 {
+  font-family: 'Montserrat-Light';
 }

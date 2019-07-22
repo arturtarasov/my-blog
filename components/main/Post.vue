@@ -24,8 +24,7 @@
 
       <span>
         <i class="el-icon-message"></i>
-
-        {{post.comments.lendth}}
+        {{post.comments.length}}
       </span>
     </footer>
   </el-card>

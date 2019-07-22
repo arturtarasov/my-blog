@@ -4,7 +4,7 @@
       <div class="post-title">
         <h1>{{post.title}}</h1>
         <nuxt-link to="/">
-          <i class="el-icon-back"></i>
+          <i class="el-icon-close"></i>
         </nuxt-link>
       </div>
       <div class="post-info">
@@ -114,6 +114,13 @@ export default {
 
   .post-content {
     margin-bottom: 2rem;
+  }
+  .el-icon-close {
+    font-size: 30px;
+    color: black;
+    &:active {
+      color: grey;
+    }
   }
 </style>
 

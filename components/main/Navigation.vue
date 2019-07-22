@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <h1>SSR Blog</h1>
+    <h1>Welcome to My Blog</h1>
   </nav>
 </template>
 
@@ -11,6 +11,10 @@ nav {
   justify-content: center;
   height: 100%;
   border-bottom: 1px solid #e6e6e6;
+}
+h1 {
+  font-family: 'Montserrat-Light';
+  color: black;
 }
 </style>
 
