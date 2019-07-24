@@ -6,7 +6,7 @@
 
 ## Stack
 
-* Front: Nuxt js, Vue js, Vuex, html, scss
+* Front: Nuxt js, Vue js, Vuex, html, scss, element-ui
 * Back: Node js, Express, MongoDB, Passport
 * Server: Heroku
 
