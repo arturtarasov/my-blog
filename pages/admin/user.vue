@@ -35,7 +35,7 @@ export default {
   layout: 'admin',
   middleware: ['admin-auth'],
   head: {
-    title: `Создать пользователя  | ${process.env.appName}`
+    title: `Создать пользователя | ${process.env.appName}`
   },
   data() {
     return {
@@ -59,21 +59,22 @@ export default {
     onSubmit() {
       this.$refs.form.validate(async valid => {
         if (valid) {
-          this.loading = true;
+          this.loading = true
 
           try {
             const formData = {
               login: this.controls.login,
               password: this.controls.password
-            };
-            await this.$store.dispatch('auth/createUser', formData);
-            this.$message.success('Новый пользователь добавлен');
-            this.controls.login = '';
-            this.controls.password = '';
-            this.loading = false;
+            }
+
+            await this.$store.dispatch('auth/createUser', formData)
+            this.$message.success('Новый пользователь добавлен')
+            this.controls.login = ''
+            this.controls.password = ''
+            this.loading = false
 
           } catch (e) {
-            this.loading = false;
+            this.loading = false
           }
         }
       })
@@ -84,7 +85,7 @@ export default {
 
 <style lang="scss" scoped>
   form {
-    width: 600px;
+    max-width: 600px;
   }
 </style>
 

@@ -53,15 +53,15 @@ export default {
   layout: 'admin',
   middleware: ['admin-auth'],
   head: {
-    title: `Все посты  | ${process.env.appName}`
+    title: `Все посты | ${process.env.appName}`
   },
   async asyncData({store}) {
-    const posts = await store.dispatch('post/fetchAdmin');
-    return {posts};
+    const posts = await store.dispatch('post/fetchAdmin')
+    return {posts}
   },
   methods: {
     open(id) {
-      this.$router.push(`/admin/post/${id}`);
+      this.$router.push(`/admin/post/${id}`)
     },
     async remove(id) {
       try {
@@ -69,11 +69,11 @@ export default {
           confirmButtonText: 'Да',
           cancelButtonText: 'Отменить',
           type: 'warning'
-        });
-        await this.$store.dispatch('post/remove', id);
-        this.posts = this.posts.filter(p => p._id !== id);
+        })
+        await this.$store.dispatch('post/remove', id)
+        this.posts = this.posts.filter(p => p._id !== id)
 
-        this.$message.success('Пост удален');
+        this.$message.success('Пост удален')
       } catch (e) {}
 
     }

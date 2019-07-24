@@ -11,8 +11,6 @@
       ref="form"
       @submit.native.prevent="onSubmit"
     >
-      <!-- <h2>Войти в панель администратора</h2> -->
-
       <el-form-item label="Текст в формате .md или .html" prop="text">
         <el-input
           type="textarea"
@@ -26,7 +24,7 @@
         <small class="mr">
           <i class="el-icon-time"></i>
           <span>
-            {{post.date | date }}
+            {{ post.date | date }}
           </span>
         </small>
 
@@ -54,15 +52,17 @@
 export default {
   layout: 'admin',
   middleware: ['admin-auth'],
-  head: {
-    title: `${this.post.title}  | ${process.env.appName}`
+  head() {
+    return {
+      title: `${this.post.title} | ${process.env.appName}`
+    }
   },
   validate({params}) {
-    return Boolean(params.id);
+    return Boolean(params.id)
   },
   async asyncData({store, params}) {
-    const post = await store.dispatch('post/fetchAdminById', params.id);
-    return {post};
+    const post = await store.dispatch('post/fetchAdminById', params.id)
+    return {post}
   },
   data() {
     return {
@@ -78,25 +78,25 @@ export default {
     }
   },
   mounted() {
-    this.controls.text = this.post.text;
+    this.controls.text = this.post.text
   },
   methods: {
     onSubmit() {
       this.$refs.form.validate(async valid => {
         if (valid) {
-          this.loading = true;
+          this.loading = true
 
           const formData = {
             text: this.controls.text,
             id: this.post._id
-          };
+          }
 
           try {
-            await this.$store.dispatch('post/update', formData);
-            this.$message.success('Пост обновлен');
-            this.loading = false;
+            await this.$store.dispatch('post/update', formData)
+            this.$message.success('Пост обновлен')
+            this.loading = false
           } catch (e) {
-            this.loading = false;
+            this.loading = false
           }
         }
       })

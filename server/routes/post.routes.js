@@ -1,59 +1,53 @@
-const passport = require('passport');
-const {Router} = require('express');
-const router = Router();
+const passport = require('passport')
+const {Router} = require('express')
+const upload = require('../middleware/upload')
+const ctr = require('../controllers/post.controller')
+const router = Router()
 
-const controller = require('../controllers/post.controller');
-const upload = require('../middleware/upload');
-
-/**
- * ADMIN
- * route /api/post/admin
- */
-
+// Admin
+// /api/post/admin
 router.post(
-    '/admin/',
-    passport.authenticate('jwt', {session: false}),
-    upload.single('image'),
-    controller.create
-);
-
-router.get(
-    '/admin/',
-    passport.authenticate('jwt', {session: false}),
-    controller.getAll
-);
-
-router.get(
-    '/admin/:id',
-    passport.authenticate('jwt', {session: false}),
-    controller.getById
-);
-
-router.put(
-    '/admin/:id',
-    passport.authenticate('jwt', {session: false}),
-    controller.update
-);
-
-router.delete(
-    '/admin/:id',
-    passport.authenticate('jwt', {session: false}),
-    controller.remove
-);
-
-router.get(
-    '/admin/get/analytics',
-    passport.authenticate('jwt', {session: false}),
-    controller.getAnalytics
+  '/admin/',
+  passport.authenticate('jwt', {session: false}),
+  upload.single('image'),
+  ctr.create
 )
 
-/**
- * BASE
- * route /api/post
- */
+router.get(
+  '/admin/',
+  passport.authenticate('jwt', {session: false}),
+  ctr.getAll
+)
 
-router.get('/', controller.getAll);
-router.get('/:id', controller.getById);
-router.put('/add/view/:id', controller.addView);
+router.get(
+  '/admin/:id',
+  passport.authenticate('jwt', {session: false}),
+  ctr.getById
+)
 
-module.exports = router;
+router.put(
+  '/admin/:id',
+  passport.authenticate('jwt', {session: false}),
+  ctr.update
+)
+
+router.delete(
+  '/admin/:id',
+  passport.authenticate('jwt', {session: false}),
+  ctr.remove
+)
+
+router.get(
+  '/admin/get/analytics',
+  passport.authenticate('jwt', {session: false}),
+  ctr.getAnalytics
+)
+
+// Base
+// /api/post
+router.get('/', ctr.getAll)
+router.get('/:id', ctr.getById)
+
+router.put('/add/view/:id', ctr.addView)
+
+module.exports = router

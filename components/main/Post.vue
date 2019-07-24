@@ -5,17 +5,17 @@
     class="post"
   >
     <header slot="header" class="post-header">
-      <h3>{{ post.title }}</h3>
+      <h3>{{post.title}}</h3>
 
       <small>
         <i class="el-icon-time"></i>
-        {{ post.date | date }}
+        {{ post.date | date('date') }}
       </small>
     </header>
     <div class="post-body">
-      <img 
-        :src="post.imageUrl" 
-        alt="post image" 
+      <img
+        :src="post.imageUrl"
+        alt="post image"
         class="post-img"
       >
     </div>
@@ -24,6 +24,7 @@
 
       <span>
         <i class="el-icon-message"></i>
+
         {{post.comments.length}}
       </span>
     </footer>
@@ -40,7 +41,7 @@ export default {
   },
   methods: {
     openPost() {
-      const id = this.post._id;
+      const id = this.post._id
       this.$router.push(`/post/${id}`)
     }
   }

@@ -34,10 +34,10 @@ export default {
   },
   destroyed() {
     window.removeEventListener("resize", this.handleResize);
+    console.log('FROM ADMIN PAGE');
   },
   methods: {
     handleResize() {
-      console.log(window.innerWidth);
       if (window.innerWidth < 1000) {
         this.isCollapse = true;
       } else {

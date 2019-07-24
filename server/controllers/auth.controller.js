@@ -13,7 +13,7 @@ module.exports.login = async (req, res) => {
       const token = jwt.sign({
         login: candidate.login,
         userId: candidate._id
-      }, keys.JWT, {expiresIn: 60 * 60 * 4})
+      }, keys.JWT, {expiresIn: 60 * 60})
       res.json({token})
     } else {
       res.status(401).json({message: 'Пароль неверен'})
@@ -24,7 +24,6 @@ module.exports.login = async (req, res) => {
 }
 
 module.exports.createUser = async (req, res) => {
-  console.log('createUser', req.body);
   const candidate = await User.findOne({login: req.body.login})
 
   if (candidate) {
