@@ -1,8 +1,14 @@
 # [Demo](https://my-blog123123.herokuapp.com)
 
-# nuxt-blog
+## Description
 
-> My sublime Nuxt.js project
+> The project has an administration panel. You can delete, create and modify posts and users, add comments. In addition, you can see the analytics for the posts: the number of views and a comment.
+
+## Stack
+
+* Front: Nuxt js, Vue js, Vuex, html, scss
+* Back: Node js, Express, MongoDB, Passport
+* Server: Heroku
 
 ## Build Setup
 
